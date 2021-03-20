@@ -6,6 +6,8 @@ from datetime import datetime as dt
 hosts_path_0unix = "/etc/hosts"
 hosts_temp = "hosts"
 
+redirect = "127.0.0.1"
+
 website_list = [
     'www.xataka.com', 'store.playstation.com', 'www3.animeflv.net', 'mercadolibre.com.co',
     'ebiblioteca.org', 'www.amazon.com', 'www.lectulandia2.org', 'cuevana3.io', 'www.netflix.com', 'www.olx.com.co', 'www.disneyplus.com', 'www.bbc.com'
