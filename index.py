@@ -14,7 +14,7 @@ website_list = [
 ]
 
 from_hour = 6
-to_hour = 23
+to_hour = 16
 
 while True: 
     if dt(dt.now().year, dt.now().month, dt.now().day, from_hour) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, to_hour):
@@ -22,11 +22,24 @@ while True:
 
         with open(hosts_temp, 'r+') as file:
             content = file.read()
-            print(content)
+            for website in website_list:
+                if website in content:
+                    pass
+                else:
+                    file.write(redirect + " " +  website + "\n")
             
 
     else:
         print("Fun...")
+        with open(hosts_temp, 'r+') as file:
+            content = file.readlines()
+            file.seek(0)
+            for line in content:
+                if not any(website in line for website in website_list):
+                    file.write(line)
+                file.truncate()
+                
+            
         
     
     time.sleep(1)
